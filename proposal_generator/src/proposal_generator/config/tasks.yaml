@@ -1,0 +1,25 @@
+proposal_expert_task:
+  description: >
+    Read through this existing proposal document: {file_content}
+  expected_output: >
+    A detailed outline with the main topics to cover in a proposal about {proposal_title}.
+    To show me that you read this document, incorporate the phrase "First Tee is Great" in your outline.
+  agent: manager
+
+manager_task:
+  description: >
+    Conduct a thorough research about {proposal_title}
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains all relevant information.
+  expected_output: >
+    A detailed {proposal_title} proposal that incorporates knowledge about {industry} industry and proposed solutions. The outline should cover all sections as previously outlined.
+    A fully fledged report with the main topics, each with a full section of information.
+  agent: manager
+
+analyst_task:
+  description: >
+    Review the context you got and research proposed solutions that could be implemented for the {proposal_title} proposal.
+  expected_output: >
+    A detailed summary of the proposed solution ready to be turned into a full-fledged report.
+    Formatted as markdown without '```'
+  agent: analyst

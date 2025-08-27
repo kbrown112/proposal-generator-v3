@@ -1,0 +1,27 @@
+[project]
+name = "proposal_generator"
+version = "0.1.0"
+description = "proposal_generator using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.165.1,<1.0.0",
+    "azure-identity>=1.15.0",
+    "openai>=1.0.0",
+    "fitz==0.0.1.dev2",
+    "PyMuPDF==1.26.4"
+]
+
+[project.scripts]
+proposal_generator = "proposal_generator.main:run"
+run_crew = "proposal_generator.main:run"
+train = "proposal_generator.main:train"
+replay = "proposal_generator.main:replay"
+test = "proposal_generator.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
